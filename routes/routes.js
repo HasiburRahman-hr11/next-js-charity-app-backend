@@ -2,6 +2,7 @@ const homeRoute = require('./homeRoute');
 const userRoute = require('./userRoute');
 const caseRoute = require('./caseRoute');
 const blogRoute = require('./blogRoute');
+const donationRoute = require('./donationRoute');
 
 const routes = [
     {
@@ -19,6 +20,10 @@ const routes = [
     {
         handler: blogRoute,
         path: '/blogs'
+    },
+    {
+        handler: donationRoute,
+        path: '/donations'
     }
 ]
 
