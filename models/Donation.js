@@ -1,13 +1,12 @@
 const { Schema, model } = require('mongoose');
 
 const donationSchema = new Schema({
-    title: {
-        type: String,
-        required: true
+    userInformation: {
+        type: Object
     },
-    description: { type: String },
-    author: { type: String },
-    thumbnail: { type: Buffer }
+    paymentInformation: {
+        type: Object
+    }
 }, { timestamps: true });
 
 
