@@ -18,7 +18,7 @@ useRoutes(app)
 
 
 const PORT = process.env.PORT || 8000
-mongoose.connect('mongodb+srv://hasib:hrhasib11@cluster0.w1b5o.mongodb.net/charit-able', {
+mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.w1b5o.mongodb.net/${process.env.DB_NAME}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
