@@ -22,6 +22,35 @@ exports.getAllDonations = async (req, res) => {
     }
 }
 
+// Single Donation
+exports.getSingleDonation = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const donation = await Donation.findById(id);
+        if (donation) {
+            res.status(200).json(donation);
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(error);
+    }
+}
+
+// Update Donation
+exports.updateDonation = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const donation = await Donation.findById(id);
+        if (donation) {
+            const updatedDonation = await Donation.findByIdAndUpdate(id, req.body, { new: true });
+            res.status(200).json(updatedDonation);
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(error);
+    }
+}
+
 // Delete Donation
 exports.deleteDonation = async (req, res) => {
     const { id } = req.params;
